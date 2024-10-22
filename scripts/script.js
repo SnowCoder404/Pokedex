@@ -1,7 +1,7 @@
 BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
 
 function init() {
-    for (let index = 1; index < 10; index++) {
+    for (let index = 1; index < 100; index++) {
         loadData(index);    
     }
 }
@@ -34,6 +34,18 @@ function getColor(type) {
         case "fire":
             return "darkred";
         case "water":
-            return "darkblue";        
+            return "darkblue"; 
+        case "bug":
+            return "darkgreen";        
+        case "normal":
+            return "grey";
+        case "poison":
+            return "#800080"; 
+        case "electric":
+            return "orange";
+        case "ground":
+            return "brown";
+        case "fairy":
+            return "#FF007F";
     }
 }
