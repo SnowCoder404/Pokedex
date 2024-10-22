@@ -9,7 +9,12 @@ export default [
       },
       rules: {
         semi: ['error', 'always'],
-        quotes: ['error', 'backtick']
+        quotes: ['error', 'backtick'],
+        'max-lines-per-function': ['error', { max: 14, skipBlankLines: true, skipComments: true }],
+        indent: ['error', 4],
+        'space-before-blocks': ['error', 'always'],
+        'keyword-spacing': ['error', { before: true, after: true }]
       }
     }
-];
+  ];
+  
