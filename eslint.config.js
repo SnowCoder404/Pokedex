@@ -17,4 +17,5 @@ export default [
         'keyword-spacing': ['error', { before: true, after: true }]
       }
     }
-    ];
+  ];
+  
