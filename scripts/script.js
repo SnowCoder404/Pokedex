@@ -19,5 +19,4 @@ async function usePromise() {
     } catch (error) {
         console.log(error);
     }
-    
 }
