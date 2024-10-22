@@ -4,9 +4,9 @@ function getPromise() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (promError) {
-                reject("Hat nicht geklappt");
+                reject(`Hat nicht geklappt`);
             } else {
-                resolve("Hat geklappt");
+                resolve(`Hat geklappt`);
             }
         }, 300);
     });
