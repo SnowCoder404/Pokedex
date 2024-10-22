@@ -5,10 +5,10 @@ function getPromise() {
         setTimeout(() => {
             if (promError) {
                 reject("Hat nicht geklappt");
-            }else {
+            } else {
                 resolve("Hat geklappt");
             }
-        }, 300)
+        }, 300);
     })
 }
 
