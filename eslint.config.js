@@ -9,11 +9,7 @@ export default [
       },
       rules: {
         semi: ['error', 'always'],
-        quotes: ['error', 'double'],
-        indent: ['error', 4],
-        'space-before-blocks': ['error', 'always'],
-        'keyword-spacing': ['error', { before: true, after: true }]
+        quotes: ['error', 'backtick']
       }
     }
-  ];
-  
+];
