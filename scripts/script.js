@@ -9,7 +9,7 @@ function getPromise() {
                 resolve("Hat geklappt");
             }
         }, 300);
-    })
+    });
 }
 
 async function usePromise() {
