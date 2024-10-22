@@ -11,7 +11,8 @@ export default [
         semi: ['error', 'always'],
         quotes: ['error', 'double'],
         'max-lines-per-function': ['error', { max: 14, skipBlankLines: true, skipComments: true }],
-        'space-before-blocks': ['error', 'always']
+        'space-before-blocks': ['error', 'always'],
+        'keyword-spacing': ['error', { before: true, after: true }]
       }
     }
   ];
