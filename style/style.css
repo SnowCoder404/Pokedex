@@ -51,6 +51,11 @@ body {
     height: 120px;
 }
 
+.pokemonImagesXL {
+    height: 266px;
+    width: 300px;
+}
+
 #pokemonImg:hover {
     cursor: pointer;
     background-color: rgba(255, 255, 0, 0.5) !important;

@@ -27,8 +27,14 @@ function searchTypesOfPokemon(responseData) {
     return typesOfPokemon;
 }
 
-function showBigPicture(int) {
-    document.getElementById("bigPictureDiv").classList.remove("d_none");
-    document.getElementById("bigPictureDiv").classList.add("center");
-    document.getElementById("bigPicture").innerHTML = renderBigPicturePokemon(int);
+async function showBigPicture(int) {
+    toogleBigPicture();
+    let response = await fetch(BASE_URL + int.toString());
+    let responseData = await response.json();
+    document.getElementById("bigPicture").innerHTML = renderBigPicturePokemon(int, responseData);
+}
+
+function toogleBigPicture() {
+    document.getElementById("bigPictureDiv").classList.toggle("d_none");
+    document.getElementById("bigPictureDiv").classList.toggle("center");
 }

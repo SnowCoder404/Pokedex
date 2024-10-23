@@ -20,15 +20,22 @@ function renderPokemon(pokemonData, typesOfPokemon, bgColor, int) {
             </div>`;
 }
 
-function renderBigPicturePokemon(int) {
-    return `<div class="center f_s_28" style="margin: 28px;">    
+function renderBigPicturePokemon(int, pokemonData) {
+    return `<div class="center" style="font-size: 56px; margin-bottom: 25px;">    
                 <div>
-                    <span>#${int}</span>
+                    <span>${pokemonData.name}</span>
                 </div>
             </div>
-            <div class="center" style="gap: 12px; background-color: rgba(255, 255, 255, 0.2); padding: 20px 0;">
-                <button>Home</button>
-                <button>States</button>
-                <button>Evo-Chain</button>
-            </div>  `;
+            <div class="d_flex_c" style="gap: 12px; background-color: rgba(255, 255, 255, 0.2); padding: 20px 0;">
+                <button onclick="toogleBigPicture()">Home</button>
+                <button onclick="">States</button>
+                <button onclick="">Evo-Chain</button>
+            </div>  
+            <div class="center" onclick="showBigPicture(${int})" style="height: 290px; align-items: center; margin: 38px 0;">
+                <img src=${pokemonData.sprites.other.dream_world.front_default} class="pokemonImagesXL"></img>
+            </div>
+            <div class="d_flex_c f_s_18"" style="width: 100%; margin-bottom: 18px;">
+                <span>Weight:</span>
+                <span>${pokemonData.weight / 1000} kg</span>  
+            </div>`;
 }
