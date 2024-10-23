@@ -1,13 +1,14 @@
 function renderPokemon(pokemonData, typesOfPokemon, bgColor) {
     return `<div class="center">
-                <div class="pokemonImagesDiv">
+                <div class="center pokemonImagesDiv">
                     <div style="margin-bottom: 20px;">
-                        <span style="font-size: 28px;">${pokemonData.name}</span>
+                        <span class="f_s_28">#${pokemonData.order}</span>
+                        <span class="f_s_28" style="padding: 42px;">${pokemonData.name}</span>
                     </div>    
-                    <div id="pokemonImg" class="center" style="width: 115%; height: 290px; align-items: center; margin: 25px; background-color: ${bgColor}">
+                    <div id="pokemonImg" class="center" onclick="showBigPicture()" style="width: 115%; height: 290px; align-items: center; margin: 25px; background-color: ${bgColor}">
                         <img src=${pokemonData.sprites.other.dream_world.front_default} class="pokemonImages"></img>
                     </div>
-                    <div class="d_flex_c" style="width: 125%; margin-bottom: 18px;">
+                    <div class="d_flex_c f_s_18"" style="width: 125%; margin-bottom: 18px;">
                         <span>Weight:</span>
                         <span>${pokemonData.weight / 1000} kg</span>  
                     </div>

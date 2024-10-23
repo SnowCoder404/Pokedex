@@ -49,3 +49,8 @@ function getColor(type) {
             return "#FF007F";
     }
 }
+
+function showBigPicture() {
+    document.getElementById("bigPictureDiv").classList.remove("d_none");
+    document.getElementById("bigPictureDiv").classList.add("center");
+}
