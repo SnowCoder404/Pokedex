@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-weight: bold;
+    color: white;
 }
 
 .mainDiv {
@@ -27,6 +28,12 @@ body {
 .d_flex_c {
     display: flex;
     justify-content: space-around;
+}
+
+.mainDiv {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .pokemonImagesDiv {
