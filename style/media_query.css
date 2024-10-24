@@ -1,0 +1,35 @@
+@media (min-width: 1500px) {
+    .evolutionPokemon {
+        height: 400px;
+        width: 300px;
+    }    
+}
+
+@media (max-width: 1050px) {
+    .pokemonImagesXL {
+        height: 200px;
+        width: 150px;
+    }
+    #bigPicture {
+        width: 97vw !important;
+    }
+}
+
+@media (max-width: 750px) {
+    .pokemonImagesXL {
+        height: 300px;
+        width: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .pokemonImagesDiv {
+        width: 215px !important;
+    }
+    .imgPictureArrayDiv {
+        flex-direction: column !important;
+        gap: 0 !important;
+        justify-content: unset !important;
+        align-items: center;
+    }
+}

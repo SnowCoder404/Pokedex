@@ -40,3 +40,9 @@ body {
     flex-wrap: wrap;
     gap: 12px;
 }
+
+.imgPictureArrayDiv {
+    display: flex;
+    justify-content: center;
+    gap: 38px;
+}

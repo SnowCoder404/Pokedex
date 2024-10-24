@@ -91,7 +91,7 @@ function renderPokemonWithStats(int, pokemonData) {
 }
 
 function renderPokemonEvolutin(imgPictureArray) {
-    return `<div class="d_flex" style="flex-direction: column; align-items: center;">
+    return `<div class="imgPictureArrayDiv">
                 <img src="${imgPictureArray[0]}" class="evolutionPokemon"></img>
                 <img src="${imgPictureArray[1]}" class="evolutionPokemon"></img>
                 <img src="${imgPictureArray[2]}" class="evolutionPokemon"></img>
