@@ -8,7 +8,7 @@ function renderPokemon(pokemonData, typesOfPokemon, bgColor, int) {
                     <div id="pokemonImg" class="center" onclick="showBigPicture(${int})" style="width: 115%; height: 290px; align-items: center; margin: 25px; background-color: ${bgColor}">
                         <img src=${pokemonData.sprites.other.dream_world.front_default} class="pokemonImages"></img>
                     </div>
-                    <div class="d_flex_c f_s_18"" style="width: 125%; margin-bottom: 18px;">
+                    <div class="d_flex_c f_s_18 info" style="width: 125%; margin-bottom: 18px;">
                         <div>
                             <span>Weight:</span>
                             <span>${pokemonData.weight / 1000} kg</span>  

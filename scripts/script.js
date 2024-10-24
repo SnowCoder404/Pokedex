@@ -1,7 +1,7 @@
-let evolutionArray = [];
-let imgPictureArray = [];
 BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
 EVOLUTION_URL = "https://pokeapi.co/api/v2/evolution-chain/";
+let evolutionArray = [];
+let imgPictureArray = [];
 
 function init() {
     for (let index = 1; index < 152; index++) {
@@ -60,6 +60,7 @@ async function searchEvoChain(int) {
     }
     document.getElementById("imgDiv").innerHTML = renderPokemonEvolutin(imgPictureArray);
 }
+
 
 function shareByThreeAndRoundUp(int) {
     return Math.ceil(int / 3).toString();
