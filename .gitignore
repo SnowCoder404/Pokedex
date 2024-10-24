@@ -1,2 +1,4 @@
-node_modules/
-checkJsCode.sh
+package.json
+package-lock.json
+node-modules/
+eslint.config.js
