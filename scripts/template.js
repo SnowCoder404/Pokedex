@@ -5,7 +5,7 @@ function renderPokemon(pokemonData, typesOfPokemon, int) {
                         <span class="f_s_28">#${int}</span>
                         <span class="f_s_28">${bigLetter(pokemonData.name)}</span>
                     </div>    
-                    <div id="pokemonImg" class="center ${typesOfPokemon[0]}Img" onclick="showBigPicture(${int})" style="width: 115%; height: 290px; align-items: center; margin: 25px;">
+                    <div id="pokemonImg" class="center bg-${typesOfPokemon[0]}" onclick="showBigPicture(${int})" style="width: 115%; height: 290px; align-items: center; margin: 25px;">
                         <img src=${pokemonData.sprites.other.dream_world.front_default} class="pokemonImages"></img>
                     </div>
                     <div class="d_flex_c f_s_18 info" style="width: 125%; margin-bottom: 18px;">

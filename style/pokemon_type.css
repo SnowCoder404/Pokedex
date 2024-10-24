@@ -1,71 +1,111 @@
 .grass {
-    background-color: green;
+    background-image: url("../assets/icons/grass.svg");
 }
 
-.grassImg {
+.bg-grass {
     background-color: green;
 }
 
 .fire {
-    background-image: url("../assets/img/fire.png");
+    background-image: url("../assets/icons/fire.svg");
 }
 
-.fireImg {
+.bg-fire {
     background-color: darkred;
 }
 
 .flying {
-    background-color: gray;
+    background-image: url("../assets/icons/flying.svg");
 }
 
-.flyingImg {
+.bg-flying {
     background-color: gray;
 }
 
 .water {
-    background-image: url("../assets/img/water.svg");
+    background-image: url("../assets/icons/water.svg");
 }
 
-.waterImg {
+.bg-water {
     background-color: darkblue;
 }
 
 .normal {
-    background-image: url("../assets/img/normal.svg");
+    background-image: url("../assets/icons/normal.svg");
 }
 
-.normalImg {
+.bg-normal {
     background-color: grey;
 }
 
 .bug{
-    background-color: darkgreen;
+    background-image: url("../assets/icons/bug.svg");
 }
 
-.bugImg {
+.bg-bug {
     background-color: darkgreen;
 }
 
 .fighting {
-    background-image: url("../assets/img/fighting.svg");
+    background-image: url("../assets/icons/fighting.svg");
 }
 
-.fightingImg {
+.bg-fighting {
     background-color: brown;
 }
 
 .poison {
-    background-image: url("../assets/img/poison.svg");
+    background-image: url("../assets/icons/poison.svg");
 }
 
-.poisonImg {
+.bg-poison {
     background-color: blueviolet;
 }
 
 .rock {
-    background-image: url("../assets/img/rock.svg");
+    background-image: url("../assets/icons/rock.svg");
 }
 
-.rockImg {
+.bg-rock {
     background-color: burlywood;
+}
+
+.electric {
+    background-image: url("../assets/icons/electric.svg");
+}
+
+.bg-electric {
+    background-color: yellow;    
+}
+
+.fairy {
+    background-image: url("../assets/icons/fairy.svg");
+}
+
+.bg-fairy {
+    background-color: pink;
+}
+
+.ghost {
+    background-image: url("../assets/icons/ghost.svg");
+}
+
+.bg-ghost {
+    background-color: #683e68;
+}
+
+.dark {
+    background-image: url("../assets/icons/dark.svg");
+}
+
+.bg-dark {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.ice {
+    background-image: url("../assets/icons/ice.svg");
+}
+
+.bg-ice {
+    background-color: cyan;
 }
