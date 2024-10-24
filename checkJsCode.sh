@@ -28,7 +28,7 @@ if [ ! -d $FOLDER ]; then
     echo "eslint.config.js" >> .gitignore
 fi
 
-OUTPUT=$(npx eslint 'scripts/script.js')
+OUTPUT=$(npx eslint '*/*.js')
 
 if [ -z "$OUTPUT" ]; then 
     git add .
