@@ -1,4 +1,6 @@
+let evolutionArray = [];
 BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
+EVOLUTION_URL = "https://pokeapi.co/api/v2/evolution-chain/";
 
 function init() {
     for (let index = 1; index < 152; index++) {
@@ -34,7 +36,36 @@ async function showBigPicture(int) {
     document.getElementById("bigPicture").innerHTML = renderBigPicturePokemon(int, responseData);
 }
 
+async function showPokemonStats(int) {
+    let response = await fetch(BASE_URL + int.toString());
+    let responseData = await response.json();
+    document.getElementById("pokemonStats").innerHTML = renderPokemonWithStats(int, responseData);
+}
+
+async function showPokemonData(int) {
+    let response = await fetch(BASE_URL + int.toString());
+    let responseData = await response.json();
+    document.getElementById("bigPicture").innerHTML = renderBigPicturePokemon(int, responseData);
+}
+
+async function searchEvoChain(int) {
+    let response = await fetch(EVOLUTION_URL + (int / 3).toString());
+    let responseData = await response.json(); 
+    pushEvolutionChainArray(responseData);
+}
+
+function pushEvolutionChainArray(responseData) {
+    evolutionArray = [];
+    evolutionArray.push(responseData.chain.species.name);
+    evolutionArray.push(responseData.chain.evolves_to[0].species.name);
+    evolutionArray.push(responseData.chain.evolves_to[0].evolves_to[0].species.name);
+}
+
 function toogleBigPicture() {
     document.getElementById("bigPictureDiv").classList.toggle("d_none");
     document.getElementById("bigPictureDiv").classList.toggle("center");
+}
+
+function bigLetter(str) {
+    return str[0].toUpperCase() + str.substr(1);
 }
