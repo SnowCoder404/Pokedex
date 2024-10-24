@@ -4,20 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
-    <script src="./scripts/getColor.js"></script>
     <script src="./scripts/template.js"></script>
     <script src="./scripts/script.js"></script>
     <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="style/pokemon.css">
+    <link rel="stylesheet" href="./style/header.css">
+    <link rel="stylesheet" href="./style/pokemon.css">
+    <link rel="stylesheet" href="./style/pokemon_type.css">
     <link rel="stylesheet" href="/style/media_query.css">
+    <link rel="shortcut icon" href="./assets/img/pokeball.png" type="image/x-icon">
 </head>
 <body onload="init()">
-    <header>
-        
+    <header class="d_flex_c">
+        <div class="headerDiv">
+            <img src="./assets/img/pokeball.png" height="50px">
+            <span>Pokedex</span>
+        </div>
+        <div class="headerDiv">
+            <input id="pokemonSearch" type="text" placeholder="Search a pokemon." oninput="searchAndFilterPokemon()">
+        </div>
     </header>
     <main id="mainDiv" class="mainDiv"></main>
     <div class="d_none" id="bigPictureDiv" style ="width: 100%; height: 100%; position: fixed; top: 3%; align-items: center;">
-        <div id="bigPicture" style="background-color: black; width: 30%; border-radius: 24px; padding: 25px 4px;"></div>
+        <div id="bigPicture" style="background-color: rgba(80, 0, 0, 1); width: 30%; border-radius: 24px; padding: 25px 4px;"></div>
     </div>
     <footer>
 

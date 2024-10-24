@@ -2,9 +2,14 @@ BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
 EVOLUTION_URL = "https://pokeapi.co/api/v2/evolution-chain/";
 let evolutionArray = [];
 let imgPictureArray = [];
+let allPokemonNames = [];
 
 function init() {
-    for (let index = 1; index < 152; index++) {
+    loadPokemonData(20);
+}
+
+function loadPokemonData(quantity) {
+    for (let index = 1; index < quantity + 1; index++) {
         loadData(index);    
     }
 }
@@ -17,8 +22,8 @@ async function loadData(int) {
 
 function writePokemonData(responseData, int) {
     let typesOfPokemon = searchTypesOfPokemon(responseData);
-    let bgColor = getColor(typesOfPokemon[0]);
-    document.getElementById("mainDiv").innerHTML += renderPokemon(responseData, typesOfPokemon, bgColor, int);
+    allPokemonNames.push(responseData.name);
+    document.getElementById("mainDiv").innerHTML += renderPokemon(responseData, typesOfPokemon, int);
 }
 
 function searchTypesOfPokemon(responseData) {
@@ -71,6 +76,17 @@ function pushEvolutionChainArray(responseData) {
     evolutionArray.push(responseData.chain.species.name);
     evolutionArray.push(responseData.chain.evolves_to[0].species.name);
     evolutionArray.push(responseData.chain.evolves_to[0].evolves_to[0].species.name);
+}
+
+function filterThePokemon(filterWord) {
+    return allPokemonNames.filter(name => name.includes(filterWord));
+}
+
+function searchAndFilterPokemon() {
+    let filterWord = document.getElementById("pokemonSearch").value;
+    if (filterWord.length > 2) {
+        console.log(filterThePokemon(document.getElementById("pokemonSearch").value));
+    }
 }
 
 function toogleBigPicture() {

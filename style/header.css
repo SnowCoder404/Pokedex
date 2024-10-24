@@ -1,0 +1,10 @@
+header {
+    background-color: chocolate;
+    padding: 32px 0px;
+}
+
+.headerDiv {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}

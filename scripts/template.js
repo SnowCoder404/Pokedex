@@ -1,11 +1,11 @@
-function renderPokemon(pokemonData, typesOfPokemon, bgColor, int) {
+function renderPokemon(pokemonData, typesOfPokemon, int) {
     return `<div class="center">
                 <div class="center pokemonImagesDiv">
                     <div class="d_flex" style="margin-bottom: 20px; gap: 30px;">
                         <span class="f_s_28">#${int}</span>
                         <span class="f_s_28">${bigLetter(pokemonData.name)}</span>
                     </div>    
-                    <div id="pokemonImg" class="center" onclick="showBigPicture(${int})" style="width: 115%; height: 290px; align-items: center; margin: 25px; background-color: ${bgColor}">
+                    <div id="pokemonImg" class="center ${typesOfPokemon[0]}Img" onclick="showBigPicture(${int})" style="width: 115%; height: 290px; align-items: center; margin: 25px;">
                         <img src=${pokemonData.sprites.other.dream_world.front_default} class="pokemonImages"></img>
                     </div>
                     <div class="d_flex_c f_s_18 info" style="width: 125%; margin-bottom: 18px;">
@@ -19,8 +19,8 @@ function renderPokemon(pokemonData, typesOfPokemon, bgColor, int) {
                         </div>
                     </div>
                     <div class="center" style="width: 100%; gap: 24px;">
-                        <div style="height: 48px; width: 20%; border-radius: 24px; background-color: ${bgColor};"></div>   
-                        <div style="height: 48px; width: 20%; border-radius: 24px; background-color: ${getColor(typesOfPokemon[1])};"></div>     
+                        <div class="backgroundImageCenter ${typesOfPokemon[0]}" style="height: 48px; width: 20%; border-radius: 24px;"></div>   
+                        <div class="backgroundImageCenter ${typesOfPokemon[1]}" style="height: 48px; width: 20%; border-radius: 24px;"></div>     
                     </div>        
                 </div>
             </div>`;

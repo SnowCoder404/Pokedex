@@ -1,0 +1,71 @@
+.grass {
+    background-color: green;
+}
+
+.grassImg {
+    background-color: green;
+}
+
+.fire {
+    background-image: url("../assets/img/fire.png");
+}
+
+.fireImg {
+    background-color: darkred;
+}
+
+.flying {
+    background-color: gray;
+}
+
+.flyingImg {
+    background-color: gray;
+}
+
+.water {
+    background-image: url("../assets/img/water.svg");
+}
+
+.waterImg {
+    background-color: darkblue;
+}
+
+.normal {
+    background-image: url("../assets/img/normal.svg");
+}
+
+.normalImg {
+    background-color: grey;
+}
+
+.bug{
+    background-color: darkgreen;
+}
+
+.bugImg {
+    background-color: darkgreen;
+}
+
+.fighting {
+    background-image: url("../assets/img/fighting.svg");
+}
+
+.fightingImg {
+    background-color: brown;
+}
+
+.poison {
+    background-image: url("../assets/img/poison.svg");
+}
+
+.poisonImg {
+    background-color: blueviolet;
+}
+
+.rock {
+    background-image: url("../assets/img/rock.svg");
+}
+
+.rockImg {
+    background-color: burlywood;
+}

@@ -46,3 +46,8 @@ body {
     justify-content: center;
     gap: 38px;
 }
+
+.backgroundImageCenter {
+    background-position: center;
+    background-size: cover;
+}
