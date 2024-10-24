@@ -1,4 +1,5 @@
 let evolutionArray = [];
+let imgPictureArray = [];
 BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
 EVOLUTION_URL = "https://pokeapi.co/api/v2/evolution-chain/";
 
@@ -49,9 +50,19 @@ async function showPokemonData(int) {
 }
 
 async function searchEvoChain(int) {
-    let response = await fetch(EVOLUTION_URL + (int / 3).toString());
+    let response = await fetch(EVOLUTION_URL + shareByThreeAndRoundUp(int));
     let responseData = await response.json(); 
     pushEvolutionChainArray(responseData);
+    for (let index = 0; index < evolutionArray.length; index++) {
+        let response = await fetch(BASE_URL + evolutionArray[index]);
+        let responseData = await response.json(); 
+        imgPictureArray.push(responseData.sprites.other.dream_world.front_default);           
+    }
+    document.getElementById("imgDiv").innerHTML = renderPokemonEvolutin(imgPictureArray);
+}
+
+function shareByThreeAndRoundUp(int) {
+    return Math.ceil(int / 3).toString();
 }
 
 function pushEvolutionChainArray(responseData) {

@@ -37,17 +37,19 @@ function renderBigPicturePokemon(int, pokemonData) {
                 <button onclick="showPokemonStats(${int})">States</button>
                 <button onclick="searchEvoChain(${int})">Evo-Chain</button>
             </div>  
-            <div class="center" onclick="showBigPicture(${int})" style="height: 290px; align-items: center; margin: 38px 0;">
-                <img src=${pokemonData.sprites.other.dream_world.front_default} class="pokemonImagesXL"></img>
-            </div>
-            <div id="pokemonStats" class="d_flex_c f_s_18"" style="width: 100%; margin-bottom: 18px; flex-direction: column; align-items: center;">
-                <div class="pokemonStats">
-                    <span>Height:</span>
-                    <span>${pokemonData.height} cm</span>
+            <div id="imgDiv">
+                <div class="center" onclick="showBigPicture(${int})" style="height: 290px; align-items: center; margin: 38px 0;">
+                    <img src=${pokemonData.sprites.other.dream_world.front_default} class="pokemonImagesXL"></img>
                 </div>
-                <div class="pokemonStats">
-                    <span>Weight:</span>
-                    <span>${pokemonData.weight / 1000} kg</span>  
+                <div id="pokemonStats" class="d_flex_c f_s_18"" style="width: 100%; margin-bottom: 18px; flex-direction: column; align-items: center;">
+                    <div class="pokemonStats">
+                        <span>Height:</span>
+                        <span>${pokemonData.height} cm</span>
+                    </div>
+                    <div class="pokemonStats">
+                        <span>Weight:</span>
+                        <span>${pokemonData.weight / 1000} kg</span>  
+                    </div>
                 </div>
             </div>`;
 }
@@ -85,5 +87,13 @@ function renderPokemonWithStats(int, pokemonData) {
                         <td class="distance">${pokemonData.stats[5].base_stat}</td>
                     </tr>
                 </table> 
+            </div>`;
+}
+
+function renderPokemonEvolutin(imgPictureArray) {
+    return `<div class="d_flex" style="flex-direction: column; align-items: center;">
+                <img src="${imgPictureArray[0]}" class="evolutionPokemon"></img>
+                <img src="${imgPictureArray[1]}" class="evolutionPokemon"></img>
+                <img src="${imgPictureArray[2]}" class="evolutionPokemon"></img>
             </div>`;
 }
