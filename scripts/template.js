@@ -18,9 +18,9 @@ function renderPokemon(pokemonData, typesOfPokemon, int) {
                             <span>${pokemonData.height} cm</span>
                         </div>
                     </div>
-                    <div class="center" style="width: 100%; gap: 24px;">
-                        <div class="backgroundImageCenter ${typesOfPokemon[0]}" style="height: 48px; width: 20%; border-radius: 24px;"></div>   
-                        <div class="backgroundImageCenter ${typesOfPokemon[1]}" style="height: 48px; width: 20%; border-radius: 24px;"></div>     
+                    <div class="center w-100" style="gap: 24px;">
+                        <div class="br-24 backgroundImageCenter ${typesOfPokemon[0]}" style="height: 48px; width: 20%;"></div>   
+                        <div class="br-24 backgroundImageCenter ${typesOfPokemon[1]}" style="height: 48px; width: 20%;"></div>     
                     </div>        
                 </div>
             </div>`;
@@ -43,12 +43,16 @@ function renderBigPicturePokemon(int, pokemonData, typesOfPokemon) {
                 <div class="center" onclick="showBigPicture(${int})" style="height: 290px; align-items: center; margin: 38px 0;">
                     <img src=${pokemonData.sprites.other.dream_world.front_default} class="pokemonImagesXL"></img>
                 </div>
-                <div id="pokemonStats" class="d_flex_c f_s_18"" style="width: 100%; margin-bottom: 18px; flex-direction: column; align-items: center;">
-                    <div class="pokemonStats">
+                <div class="d_flex_c">
+                    <button class="br-24 center switchButton" onclick="showPokemonData(${int - 1})"><</button>
+                    <button class="br-24 center switchButton" onclick="showPokemonData(${int + 1})">></button>
+                </div>
+                <div id="pokemonStats" class="d_flex_c f_s_18 w-100" style="margin-top: 18px; flex-direction: column; align-items: center;">
+                    <div class="w-400 d_flex_c">
                         <span>Height:</span>
                         <span>${pokemonData.height} cm</span>
                     </div>
-                    <div class="pokemonStats">
+                    <div class="w-400 d_flex_c">
                         <span>Weight:</span>
                         <span>${pokemonData.weight / 1000} kg</span>  
                     </div>
@@ -57,12 +61,11 @@ function renderBigPicturePokemon(int, pokemonData, typesOfPokemon) {
 }
 
 function renderPokemonWithStats(int, pokemonData) {
-    return `<div class="d_flex_c f_s_16" style="width: 100%; margin-bottom: 18px; flex-direction: column; align-items: center;">
+    return `<div class="d_flex_c f_s_16 w-100" style="margin-bottom: 18px; flex-direction: column; align-items: center;">
                 EP :
                 <div class="statsDiv"> 
                     <div class="statsText" style="width: ${pokemonData.base_experience}px;">${pokemonData.base_experience}</div>
-                </div>
-                
+                </div>               
                 HP :
                 <div class="statsDiv">
                     <div class="statsText" style="width: ${pokemonData.stats[0].base_stat * 2}px;">${pokemonData.stats[0].base_stat}</div>

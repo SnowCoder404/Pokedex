@@ -1,6 +1,13 @@
 footer {
     background-color: chocolate;
     padding: 32px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.filterFooter {
     position: sticky;
     bottom: 0;
+    width: 100%;
+    height: 15vh;
 }

@@ -1,0 +1,12 @@
+.loadMore:hover {
+    cursor: pointer;
+}
+
+.switchButton:hover {
+    cursor: pointer;
+}
+
+.navButton:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+}

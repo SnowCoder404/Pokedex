@@ -37,14 +37,6 @@ input {
     font-size: 40px;
 }
 
-.loadMore:hover {
-    cursor: pointer;
-}
-
-.h-80 {
-    height: 80px;
-}
-
 .undefined {
     display: none !important;
 }
@@ -79,9 +71,32 @@ input {
     font-size: 24px;
 }
 
-.navButton:hover {
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.1);
+.bigPicture {
+    background-color: rgba(80, 0, 0, 1); 
+    width: 30%; 
+    padding: 25px 4px;
+}
+
+.bigPictureDiv { 
+    position: fixed; 
+    top: 3%; 
+    height: 100%;
+    align-items: center
+}
+
+.center-gap-12 {
+    align-items: center;
+    gap: 12px;
+}
+
+.center-gap-36 {
+    align-items: center;
+    gap: 32px;
+}
+
+.notFoundFilter {
+    height: 66vh !important;
+    align-items: center;
 }
 
 .waitAnimation {
@@ -89,4 +104,11 @@ input {
     position: fixed;
     height: 100%;
     width: 100%;
+}
+
+.switchButton {
+    height: 50px;
+    width: 50px;
+    font-size: 36px;
+    font-weight: bold;
 }
