@@ -109,3 +109,27 @@
 .bg-ice {
     background-color: cyan;
 }
+
+.ground {
+    background-image: url("../assets/icons/ground.svg");
+}
+
+.bg-ground {
+    background-color: brown;
+}
+
+.psychic {
+    background-image: url("../assets/icons/psychic.svg");
+}
+
+.bg-psychic {
+    background-color: blueviolet;
+}
+
+.dragon{
+    background-image: url("../assets/icons/dragon.svg");
+}
+
+.bg-dragon{
+    background-color: purple;
+}

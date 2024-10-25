@@ -8,31 +8,50 @@
     <script src="./scripts/template.js"></script>
     <script src="./scripts/script.js"></script>
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/standard.css">
     <link rel="stylesheet" href="./style/header.css">
+    <link rel="stylesheet" href="./style/footer.css">
     <link rel="stylesheet" href="./style/pokemon.css">
     <link rel="stylesheet" href="./style/pokemon_type.css">
     <link rel="stylesheet" href="/style/media_query.css">
     <link rel="shortcut icon" href="./assets/img/pokeball.png" type="image/x-icon">
 </head>
 <body onload="init()">
-    <header class="d_flex_c">
-        <div class="headerDiv">
-            <img src="./assets/img/pokeball.png" height="50px">
-            <span>Pokedex</span>
-        </div>
-        <div class="headerDiv">
-            <input id="pokemonSearch" type="text" placeholder="Search a pokemon." oninput="searchAndFilterPokemon()">
+    <div id="waitAnimation" class="d_none waitAnimation"></div>
+    <header>
+        <div class="d_flex_c w-100">
+            <div class="d_flex" style="align-items: center; gap: 12px;">
+                <img src="./assets/img/pokeball.png" height="50px">
+                <span>Pokedex</span>
+            </div>
+ 
+            <div class="headerDiv">
+                <input id="pokemonSearch" type="text" placeholder="Search a pokemon." oninput="searchAndFilterPokemon()">
+            </div>
         </div>
     </header>
     <main id="mainDiv" class="mainDiv"></main>
-    <div class="d_none" id="bigPictureDiv" style ="width: 100%; height: 100%; position: fixed; top: 3%; align-items: center;">
+    <div class="d_none w-100" id="bigPictureDiv" style ="height: 100%; position: fixed; top: 3%; align-items: center;">
         <div id="bigPicture" style="background-color: rgba(80, 0, 0, 1); width: 30%; border-radius: 24px; padding: 25px 4px;"></div>
     </div>
     <div class="center h-80">
         <button class="loadMore" onclick="loadMorePokemon()">Load more</button>
     </div>
     <footer>
-
+        <div class="d_flex_c w-100">
+            <div class="d_flex footerLogoDiv" style="align-items: center; gap: 12px;">
+                <img src="./assets/img/pokeball.png" height="75px">
+                <span>Pokedex</span>
+            </div>
+            <div class="d_flex" style="align-items: center; gap: 32px;">    
+                <a href="https://github.com/SnowCoder404">
+                    <img src="./assets/img/github.png" class="br-24" height="75px" alt="Github">
+                </a>
+                <a href="https://de.linkedin.com/in/marco-lenschau-271214317">
+                    <img src="./assets/img/linkedin.png" class="br-24" height="75px" alt="Linkedin">
+                </a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

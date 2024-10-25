@@ -4,6 +4,7 @@ function init() {
 }
 
 function loadPokemonData(quantity, state) {
+    // document.getElementById("waitAnimation").classList.remove("d_none");
     document.getElementById("mainDiv").innerHTML = "";
     for (let index = 1; index < quantity + 1; index++) {
         loadData(index, state);    
@@ -28,6 +29,7 @@ function writePokemonData(responseData, int, state) {
         allPokemonNames.push(responseData.name);
     }
     document.getElementById("mainDiv").innerHTML += renderPokemon(responseData, typesOfPokemon, int);
+    // document.getElementById("waitAnimation").classList.add("d_none");
 }
 
 function searchTypesOfPokemon(responseData) {
@@ -43,19 +45,22 @@ async function showBigPicture(int) {
     toogleBigPicture();
     let response = await fetch(BASE_URL + int.toString());
     let responseData = await response.json();
-    document.getElementById("bigPicture").innerHTML = renderBigPicturePokemon(int, responseData);
+    let typesOfPokemon = searchTypesOfPokemon(responseData);
+    document.getElementById("bigPicture").innerHTML = renderBigPicturePokemon(int, responseData, typesOfPokemon);
 }
 
 async function showPokemonStats(int) {
     let response = await fetch(BASE_URL + int.toString());
     let responseData = await response.json();
+    document.getElementById("bigPictureDiv").classList.add("h-94");
     document.getElementById("pokemonStats").innerHTML = renderPokemonWithStats(int, responseData);
 }
 
 async function showPokemonData(int) {
     let response = await fetch(BASE_URL + int.toString());
     let responseData = await response.json();
-    document.getElementById("bigPicture").innerHTML = renderBigPicturePokemon(int, responseData);
+    let typesOfPokemon = searchTypesOfPokemon(responseData);
+    document.getElementById("bigPicture").innerHTML = renderBigPicturePokemon(int, responseData, typesOfPokemon);
 }
 
 function shareByThreeAndRoundUp(int) {

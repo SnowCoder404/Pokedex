@@ -1,0 +1,50 @@
+
+.f_s_16 {
+    font-size: 16px;
+}
+
+.f_s_18 {
+    font-size: 18px;
+}
+
+.f_s_28 {
+    font-size: 28px;
+}
+
+.f_s_36 {
+    font-size: 36px;
+}
+
+.d_none {
+    display: none;
+}
+
+.d_flex {
+    display: flex;
+}
+
+.d_flex_c {
+    display: flex;
+    justify-content: space-around;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.distance {
+    padding-left: 24px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-94 {
+    height: 94% !important;
+}
+
+.br-24 {
+    border-radius: 24px;
+}

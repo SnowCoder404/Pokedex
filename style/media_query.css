@@ -44,3 +44,9 @@
         gap: 34px;
     }
 }
+
+@media (max-width: 400px) {
+    .footerLogoDiv {
+        display: none !important;
+    }
+}

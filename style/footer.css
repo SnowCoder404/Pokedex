@@ -1,0 +1,6 @@
+footer {
+    background-color: chocolate;
+    padding: 32px 0px;
+    position: sticky;
+    bottom: 0;
+}

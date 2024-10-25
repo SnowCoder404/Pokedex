@@ -4,35 +4,11 @@ body {
     color: white;
 }
 
-.f_s_18 {
-    font-size: 18px;
-}
-
-.f_s_28 {
-    font-size: 28px;
-}
-
-.d_none {
-    display: none;
-}
-
-.d_flex {
-    display: flex;
-}
-
-.d_flex_c {
-    display: flex;
-    justify-content: space-around;
-}
-
-.center {
-    display: flex;
-    justify-content: center;
-}
-
-.distance {
-    padding-left: 24px;
-}
+input {
+    height: 40px;
+    text-align: center;
+    border-radius: 24px;
+} 
 
 .mainDiv {
     display: flex;
@@ -53,9 +29,10 @@ body {
 }
 
 .loadMore{
-    background-color: brown;
+    background-color: chocolate;
     height: 60px;
     width: 265px;
+    border-radius: 24px;
     font-weight: bold;
     font-size: 40px;
 }
@@ -70,4 +47,46 @@ body {
 
 .undefined {
     display: none !important;
+}
+
+.statsDiv {
+    width: 50%;
+    background-color: white;
+    height: 25px;
+    margin: 4px;
+    color: black;
+    text-align: center;
+}
+
+.statsText {
+    background-color: green;
+    height: 100%;
+}
+
+.pokemonTypes {
+    height: 70px; 
+    width: 70px; 
+    border-radius: 24px
+}
+
+.navButton {
+    background-color: darkred;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 24px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.navButton:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.waitAnimation {
+    background-color: black;
+    position: fixed;
+    height: 100%;
+    width: 100%;
 }

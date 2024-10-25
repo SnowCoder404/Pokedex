@@ -26,16 +26,18 @@ function renderPokemon(pokemonData, typesOfPokemon, int) {
             </div>`;
 }
 
-function renderBigPicturePokemon(int, pokemonData) {
-    return `<div class="center" style="font-size: 56px; margin-bottom: 25px;">    
-                <div>
-                    <span>${bigLetter(pokemonData.name)}</span>
-                </div>
+function renderBigPicturePokemon(int, pokemonData, typesOfPokemon) {
+    return `<span class="f_s_36 center">${bigLetter(pokemonData.name)}</span> 
+            <div class="d_flex_c" style="font-size: 56px; margin-bottom: 25px;">    
+                <div class="backgroundImageCenter pokemonTypes ${typesOfPokemon[0]}"></div>   
+                <div class="backgroundImageCenter pokemonTypes ${typesOfPokemon[1]}"></div>                       
             </div>
+            
             <div class="d_flex_c" style="gap: 12px; background-color: rgba(255, 255, 255, 0.2); padding: 20px 0;">
-                <button onclick="showPokemonData(${int})">Home</button>
-                <button onclick="showPokemonStats(${int})">States</button>
-                <button onclick="searchEvoChain(${int})">Evo-Chain</button>
+                <button class="navButton" onclick="showPokemonData(${int})">Home</button>
+                <button class="navButton" onclick="showPokemonStats(${int})">States</button>
+                <button class="navButton" onclick="searchEvoChain(${int})">Evo-Chain</button>
+                <button class="navButton" onclick="toogleBigPicture()">Exit</button>
             </div>  
             <div id="imgDiv">
                 <div class="center" onclick="showBigPicture(${int})" style="height: 290px; align-items: center; margin: 38px 0;">
@@ -55,38 +57,36 @@ function renderBigPicturePokemon(int, pokemonData) {
 }
 
 function renderPokemonWithStats(int, pokemonData) {
-    return `<div class="d_flex_c f_s_18"" style="width: 100%; margin-bottom: 18px; flex-direction: column; align-items: center;">
-                <table>
-                    <tr>
-                        <th style="padding-right: 118px;">EP:</th>
-                        <th class="distance">${pokemonData.base_experience}</th>
-                    </tr>
-                    <tr>
-                        <td>HP:</td>
-                        <td class="distance">${pokemonData.stats[0].base_stat}</td>
-                    </tr>
-                    <tr>
-                        <td>Attack:</td>
-                        <td class="distance">${pokemonData.stats[1].base_stat}</td>
-                    </tr>
-                    <tr>
-                        <td>Defense:</td>
-                        <td class="distance">${pokemonData.stats[2].base_stat}</td>
-                    </tr>
-
-                    <tr>
-                        <td>Spezial Attack:</td>
-                        <td class="distance">${pokemonData.stats[3].base_stat}</td>
-                    </tr>
-                    <tr>
-                        <td>Special Defense:</td>
-                        <td class="distance">${pokemonData.stats[4].base_stat}</td>
-                    </tr>
-                    <tr>
-                        <td>Speed:</td>
-                        <td class="distance">${pokemonData.stats[5].base_stat}</td>
-                    </tr>
-                </table> 
+    return `<div class="d_flex_c f_s_16" style="width: 100%; margin-bottom: 18px; flex-direction: column; align-items: center;">
+                EP :
+                <div class="statsDiv"> 
+                    <div class="statsText" style="width: ${pokemonData.base_experience}px;">${pokemonData.base_experience}</div>
+                </div>
+                
+                HP :
+                <div class="statsDiv">
+                    <div class="statsText" style="width: ${pokemonData.stats[0].base_stat * 2}px;">${pokemonData.stats[0].base_stat}</div>
+                </div>
+                Attack : 
+                <div class="statsDiv">
+                    <div class="statsText" style="width: ${pokemonData.stats[1].base_stat * 2}px;">${pokemonData.stats[1].base_stat}</div>
+                </div>
+                Defense : 
+                <div class="statsDiv">
+                    <div class="statsText" style="width: ${pokemonData.stats[2].base_stat * 2}px;">${pokemonData.stats[2].base_stat}</div>
+                </div>
+                Special Attack : 
+                <div class="statsDiv">
+                    <div class="statsText" style="width: ${pokemonData.stats[3].base_stat * 2}px;">${pokemonData.stats[3].base_stat}</div>
+                </div>
+                Special Defense : 
+                <div class="statsDiv">
+                    <div class="statsText" style="width: ${pokemonData.stats[4].base_stat * 2}px;">${pokemonData.stats[4].base_stat}</div>
+                </div>
+                Speed :
+                <div class="statsDiv">
+                    <div class="statsText" style="width: ${pokemonData.stats[5].base_stat * 2}px;">${pokemonData.stats[5].base_stat}</div>
+                </div>
             </div>`;
 }
 
