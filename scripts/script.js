@@ -61,7 +61,7 @@ async function showPokemonStats(int) {
 async function showPokemonData(int) {
     if (isNumberLowerAsOne(int)) {
         int = loadedPokemonInt;
-    }else if (isNumberBiggerAsLoadedPokemon(int)) {
+    } else if (isNumberBiggerAsLoadedPokemon(int)) {
         int = 1;
     }
     let response = await fetch(BASE_URL + int.toString());
@@ -87,12 +87,11 @@ function showFilterArray() {
     if (isNumberLowerAsOne(filterArray.length)) {
         notFoundFilter("add");
         document.getElementById("footer").classList.add("filterFooter");
-    }
-    else if (filterArray.length < 10) {
+    } else if (filterArray.length < 10) {
         notFoundFilter("remove");
         document.getElementById("footer").classList.remove("filterFooter");
         addContentInFilterArray(filterArray);
-    }else {
+    } else {
         notFoundFilter("remove");
         document.getElementById("footer").classList.add("filterFooter");
     }
@@ -110,7 +109,7 @@ async function addContentInFilterArray(filterArray) {
 function notFoundFilter(action) {
     if (action == "add") {
         document.getElementById("pokemonContent").classList.add("notFoundFilter");
-    }else if (action == "remove") {
+    } else if (action == "remove") {
         document.getElementById("pokemonContent").classList.remove("notFoundFilter");
     }
 }
