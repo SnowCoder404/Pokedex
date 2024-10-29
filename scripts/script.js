@@ -4,30 +4,25 @@ function init() {
     loadedPokemonInt = 20;
 }
 
-function loadPokemonData(quantity, state) {
+async function loadPokemonData(quantity, state) {
     // document.getElementById("waitAnimation").classList.remove("d_none");
     document.getElementById("mainDiv").innerHTML = "";
     for (let index = 1; index < quantity + 1; index++) {
-        loadData(index, state);    
+        await writePokemonData(index, state);    
     }
 }
 
-function loadMorePokemon() {
+async function loadMorePokemon() {
     document.getElementById("mainDiv").innerHTML = "";
     loadedPokemonInt = loadedPokemonInt + 20;
     allPokemonNames = [];
-    loadPokemonData(loadedPokemonInt, 1);
+    await loadPokemonData(loadedPokemonInt, 1);
 }
 
-async function loadData(int, state) {
-    let response = await fetch(BASE_URL + int.toString());
-    let responseData = await response.json();
-    writePokemonData(responseData, int, state);
-}
-
-function writePokemonData(responseData, int, state) {
+async function writePokemonData(int, state) {
+    let responseData = await loadPokemonDataFromApi(BASE_URL + int.toString());
     let typesOfPokemon = searchTypesOfPokemon(responseData);
-    if (isNumberLowerAsOne(!state)) {
+    if (isNumberLowerAsInt(!state, 1)) {
         allPokemonNames.push(responseData.name);
     }
     document.getElementById("mainDiv").innerHTML += renderPokemon(responseData, typesOfPokemon, int);
@@ -43,39 +38,42 @@ function searchTypesOfPokemon(responseData) {
     return typesOfPokemon;
 }
 
+async function loadPokemonDataFromApi(url) {
+    let response = await fetch(url);
+    let responseData = await response.json();
+    return responseData;
+}
+
 async function showBigPicture(int) {
     toogleBigPicture();
-    let response = await fetch(BASE_URL + int.toString());
-    let responseData = await response.json();
+    let responseData = await loadPokemonDataFromApi(BASE_URL + int.toString());
     let typesOfPokemon = searchTypesOfPokemon(responseData);
     document.getElementById("bigPicture").innerHTML = renderBigPicturePokemon(int, responseData, typesOfPokemon);
 }
 
 async function showPokemonStats(int) {
-    let response = await fetch(BASE_URL + int.toString());
-    let responseData = await response.json();
+    let responseData = await loadPokemonDataFromApi(BASE_URL + int.toString());
     document.getElementById("bigPictureDiv").classList.add("h-94");
     document.getElementById("pokemonStats").innerHTML = renderPokemonWithStats(int, responseData);
 }
 
 async function showPokemonData(int) {
-    if (isNumberLowerAsOne(int)) {
+    if (isNumberLowerAsInt(int, 1)) {
         int = loadedPokemonInt;
     } else if (isNumberBiggerAsLoadedPokemon(int)) {
         int = 1;
     }
-    let response = await fetch(BASE_URL + int.toString());
-    let responseData = await response.json();
+    let responseData = await loadPokemonDataFromApi(BASE_URL + int.toString());
     let typesOfPokemon = searchTypesOfPokemon(responseData);
     document.getElementById("bigPicture").innerHTML = renderBigPicturePokemon(int, responseData, typesOfPokemon);
 }
 
-function searchAndFilterPokemon() {
+async function searchAndFilterPokemon() {
     let filterWord = document.getElementById("pokemonSearch").value;
     if (filterWord.length < 3) {
         notFoundFilter("remove");
         document.getElementById("footer").classList.remove("filterFooter");
-        loadPokemonData(loadedPokemonInt, 0);
+        await loadPokemonData(loadedPokemonInt, 0);
     } else {
         document.getElementById("mainDiv").innerHTML = "";
         showFilterArray();
@@ -84,12 +82,12 @@ function searchAndFilterPokemon() {
 
 function showFilterArray() {
     let filterArray = filterThePokemon(document.getElementById("pokemonSearch").value);    
-    if (isNumberLowerAsOne(filterArray.length)) {
+    if (isNumberLowerAsInt(filterArray.length, 1)) {
         notFoundFilter("add");
         document.getElementById("footer").classList.add("filterFooter");
-    } else if (filterArray.length < 10) {
+    } else if (isNumberLowerAsInt(filterArray.length, 10)) {
         notFoundFilter("remove");
-        document.getElementById("footer").classList.remove("filterFooter");
+        document.getElementById("footer").classList.add("filterFooter");
         addContentInFilterArray(filterArray);
     } else {
         notFoundFilter("remove");
@@ -99,8 +97,7 @@ function showFilterArray() {
 
 async function addContentInFilterArray(filterArray) {
     for (let index = 0; index < filterArray.length; index++) {
-        let response = await fetch(BASE_URL + filterArray[index]);
-        let responseData = await response.json();
+        let responseData = await loadPokemonDataFromApi(BASE_URL + filterArray[index]);
         let typesOfPokemon = searchTypesOfPokemon(responseData);
         document.getElementById("mainDiv").innerHTML += renderPokemon(responseData, typesOfPokemon, responseData.id);   
     }
@@ -114,16 +111,12 @@ function notFoundFilter(action) {
     }
 }
 
-function isNumberLowerAsOne(number) {
-    return number < 1;
+function isNumberLowerAsInt(number, int) {
+    return number < int;
 }
 
 function isNumberBiggerAsLoadedPokemon(number) {
     return number > loadedPokemonInt;
-}
-
-function shareByThreeAndRoundUp(int) {
-    return Math.ceil(int / 3).toString();
 }
 
 function filterThePokemon(filterWord) {
@@ -134,27 +127,64 @@ function bigLetter(str) {
     return str[0].toUpperCase() + str.substr(1);
 }
 
+function isNotUndefined(element) {
+    return element != undefined;
+}
+
 function toogleBigPicture() {
     document.getElementById("bigPictureDiv").classList.toggle("d_none");
     document.getElementById("bigPictureDiv").classList.toggle("center");
 }
 
-async function searchEvoChain(int) {
-    let response = await fetch(EVOLUTION_URL + shareByThreeAndRoundUp(int));
-    let responseData = await response.json(); 
-    pushEvolutionChainArray(responseData);
-    for (let index = 0; index < evolutionArray.length; index++) {
-        let response = await fetch(BASE_URL + evolutionArray[index]);
-        let responseData = await response.json(); 
-        imgPictureArray.push(responseData.sprites.other.dream_world.front_default);           
-    }
-    document.getElementById("imgDiv").innerHTML = renderPokemonEvolutin(imgPictureArray);
+function removeBigPicture() {
+    document.getElementById("bigPictureDiv").classList.add("d_none");
+    document.getElementById("bigPictureDiv").classList.remove("center");
 }
 
-
-function pushEvolutionChainArray(responseData) {
+async function searchEvoChain(int) {
+    let responseData = await loadPokemonDataFromApi(SPECIES_URL + int.toString());
+    let responseDataEvo = await loadPokemonDataFromApi(responseData.evolution_chain.url);
     evolutionArray = [];
-    evolutionArray.push(responseData.chain.species.name);
-    evolutionArray.push(responseData.chain.evolves_to[0].species.name);
-    evolutionArray.push(responseData.chain.evolves_to[0].evolves_to[0].species.name);
+    imgPictureArray = [];
+    evolutionArray.push(responseDataEvo.chain.species.name);
+    await tryCatchPushEvo(responseDataEvo);
+    await tryCatchPushLastEvo(responseDataEvo);
+    await pushToImgPictureArray();
+    hideLastEvolution(fail);
+}
+
+async function tryCatchPushEvo(responseDataEvo) {
+    try {
+        if (isNotUndefined(responseDataEvo.chain.evolves_to[0].species.name)) {
+            evolutionArray.push(responseDataEvo.chain.evolves_to[0].species.name);
+        }        
+    } catch (error) {
+        fail = 1;
+    }
+}
+
+async function tryCatchPushLastEvo(responseDataEvo) {
+    try {
+        if (isNotUndefined(responseDataEvo.chain.evolves_to[0].evolves_to[0].species.name)) {
+            evolutionArray.push(responseDataEvo.chain.evolves_to[0].evolves_to[0].species.name);
+        }        
+    } catch (error) {
+        fail = 2;
+    }
+}
+
+function hideLastEvolution(fail) {
+    if (fail == 1) {
+        document.getElementById("evolution1").classList.add("d_none");
+    } else if (fail == 2) {
+        document.getElementById("evolution2").classList.add("d_none");
+    }
+}
+
+async function pushToImgPictureArray() {
+    for (let index = 0; index < evolutionArray.length; index++) {
+        let responsePictureData = await loadPokemonDataFromApi(BASE_URL + evolutionArray[index]);
+        imgPictureArray.push(responsePictureData.sprites.other.dream_world.front_default);
+    }
+    document.getElementById("imgDiv").innerHTML = renderPokemonEvolutin(imgPictureArray);           
 }

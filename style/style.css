@@ -44,8 +44,7 @@ input {
 .statsDiv {
     width: 50%;
     background-color: white;
-    height: 25px;
-    margin: 4px;
+    height: 10px;
     color: black;
     text-align: center;
 }

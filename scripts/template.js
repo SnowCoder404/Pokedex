@@ -61,7 +61,7 @@ function renderBigPicturePokemon(int, pokemonData, typesOfPokemon) {
 }
 
 function renderPokemonWithStats(int, pokemonData) {
-    return `<div class="d_flex_c f_s_16 w-100" style="margin-bottom: 18px; flex-direction: column; align-items: center;">
+    return `<div class="d_flex_c f_s_18 w-100" style="margin-bottom: 18px; flex-direction: column; align-items: center;">
                 EP :
                 <div class="statsDiv"> 
                     <div class="statsText" style="width: ${pokemonData.base_experience}px;">${pokemonData.base_experience}</div>
@@ -96,7 +96,7 @@ function renderPokemonWithStats(int, pokemonData) {
 function renderPokemonEvolutin(imgPictureArray) {
     return `<div class="imgPictureArrayDiv">
                 <img src="${imgPictureArray[0]}" class="evolutionPokemon"></img>
-                <img src="${imgPictureArray[1]}" class="evolutionPokemon"></img>
-                <img src="${imgPictureArray[2]}" class="evolutionPokemon"></img>
+                <img id="evolution1" src="${imgPictureArray[1]}" class="evolutionPokemon"></img>
+                <img id="evolution2" src="${imgPictureArray[2]}" class="evolutionPokemon"></img>
             </div>`;
 }
