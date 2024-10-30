@@ -5,11 +5,16 @@ function init() {
 }
 
 async function loadPokemonData(quantity, state) {
-    // document.getElementById("waitAnimation").classList.remove("d_none");
+    document.getElementById("waitAnimation").classList.remove("d_none");
     document.getElementById("mainDiv").innerHTML = "";
     for (let index = 1; index < quantity + 1; index++) {
         await writePokemonData(index, state);    
     }
+    setTimeout(waitAnimationsShow, 1000);
+}
+
+function waitAnimationsShow() {
+    document.getElementById("waitAnimation").classList.add("d_none");
 }
 
 async function loadMorePokemon() {
@@ -26,7 +31,7 @@ async function writePokemonData(int, state) {
         allPokemonNames.push(responseData.name);
     }
     document.getElementById("mainDiv").innerHTML += renderPokemon(responseData, typesOfPokemon, int);
-    // document.getElementById("waitAnimation").classList.add("d_none");
+    
 }
 
 function searchTypesOfPokemon(responseData) {
@@ -80,8 +85,8 @@ async function searchAndFilterPokemon() {
     }
 }
 
-function showFilterArray() {
-    let filterArray = filterThePokemon(document.getElementById("pokemonSearch").value);    
+async function showFilterArray() {
+    let filterArray = await filterThePokemon(document.getElementById("pokemonSearch").value);    
     if (isNumberLowerAsInt(filterArray.length, 1)) {
         notFoundFilter("add");
         document.getElementById("footer").classList.add("filterFooter");
@@ -96,6 +101,7 @@ function showFilterArray() {
 }
 
 async function addContentInFilterArray(filterArray) {
+    document.getElementById("mainDiv").innerHTML = "";
     for (let index = 0; index < filterArray.length; index++) {
         let responseData = await loadPokemonDataFromApi(BASE_URL + filterArray[index]);
         let typesOfPokemon = searchTypesOfPokemon(responseData);
@@ -119,7 +125,7 @@ function isNumberBiggerAsLoadedPokemon(number) {
     return number > loadedPokemonInt;
 }
 
-function filterThePokemon(filterWord) {
+async function filterThePokemon(filterWord) {
     return allPokemonNames.filter(name => name.includes(filterWord));
 }
 
