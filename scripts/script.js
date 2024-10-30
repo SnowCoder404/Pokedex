@@ -5,16 +5,20 @@ function init() {
 }
 
 async function loadPokemonData(quantity, state) {
-    document.getElementById("waitAnimation").classList.remove("d_none");
+    waitAnimationShow(true);
     document.getElementById("mainDiv").innerHTML = "";
     for (let index = 1; index < quantity + 1; index++) {
         await writePokemonData(index, state);    
     }
-    setTimeout(waitAnimationsShow, 1000);
+    setTimeout(waitAnimationShow(false), 1000);
 }
 
-function waitAnimationsShow() {
-    document.getElementById("waitAnimation").classList.add("d_none");
+function waitAnimationShow(stateOfWaitAnimation) {
+    if (stateOfWaitAnimation) {
+        document.getElementById("waitAnimation").classList.remove("d_none");
+    } else {
+        document.getElementById("waitAnimation").classList.add("d_none");
+    }
 }
 
 async function loadMorePokemon() {
