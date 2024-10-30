@@ -10,7 +10,7 @@ async function loadPokemonData(quantity, state) {
     for (let index = 1; index < quantity + 1; index++) {
         await writePokemonData(index, state);    
     }
-    setTimeout(waitAnimationShow(false), 1000);
+    setTimeout(() => waitAnimationShow(false), 1200);
 }
 
 function waitAnimationShow(stateOfWaitAnimation) {
