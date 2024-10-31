@@ -32,7 +32,7 @@ OUTPUT=$(npx eslint 'scripts/script.js')
 
 if [ -z "$OUTPUT" ]; then 
     git add .
-    git commit -m $1
+    git commit -m "$*"
     git push
 else
     echo "There were problems with the code style."

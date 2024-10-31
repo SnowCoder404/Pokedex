@@ -1,13 +1,36 @@
+@media (min-width: 2000px) {
+    header {
+        display: flex;
+        justify-content: center;
+    }
+    .firstHeaderFooterDiv {
+        width: 1920px;
+        display: flex;
+        justify-content: space-between;
+    }  
+    main {
+        display: flex;
+        justify-content: center;
+    }
+    #mainDiv {
+        width: 1920px;
+    }
+    footer {
+        display: flex;
+        justify-content: center;
+    }
+}
+
 @media (min-width: 1500px) {
     .evolutionPokemon {
         height: 400px;
         width: 300px;
-    }  
+    }
 }
 
 @media (min-width: 1040px) {
     #bigPicture {
-        width: 65% !important;
+        width: 600px !important;
     }  
 }
 

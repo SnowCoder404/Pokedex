@@ -52,6 +52,9 @@ input {
 .statsText {
     background-color: green;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .pokemonTypes {
@@ -114,3 +117,7 @@ input {
     font-size: 36px;
     font-weight: bold;
 }
+
+#bigPicture {
+    width: 600px !important;
+}  

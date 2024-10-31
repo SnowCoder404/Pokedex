@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./style/footer.css">
     <link rel="stylesheet" href="./style/pokemon.css">
     <link rel="stylesheet" href="./style/pokemon_type.css">
-    <link rel="stylesheet" href="/style/media_query.css">
+    <link rel="stylesheet" href="./style/media_query.css">
     <link rel="stylesheet" href="./style/hover.css">
     <link rel="shortcut icon" href="./assets/img/pokeball.png" type="image/x-icon">
 </head>
@@ -22,7 +22,7 @@
         <img src="./assets/animation/animation.gif" alt="pokeball-animation">
     </div>
     <header>
-        <div class="d_flex_c w-100">
+        <div class="d_flex_c w-100 firstHeaderFooterDiv">
             <div class="d_flex center-gap-12">
                 <img src="./assets/img/pokeball.png" class="h-75">
                 <span class="f_s_36 hidden">Pokedex</span>
@@ -32,7 +32,9 @@
             </div>
         </div>
     </header>
-    <main id="mainDiv" class="mainDiv bg-o"></main>
+    <main class="bg-o">
+        <div id="mainDiv" class="mainDiv"></div>
+    </main>
     <div class="d_none w-100 bigPictureDiv" id="bigPictureDiv">
         <div id="bigPicture" class="br-24 bigPicture"></div>
     </div>
@@ -40,7 +42,7 @@
         <button class="loadMore" onclick="loadMorePokemon()">Load more</button>
     </div>
     <footer id="footer">
-        <div class="d_flex_c w-100">
+        <div class="d_flex_c w-100 firstHeaderFooterDiv">
             <div class="d_flex hidden center-gap-12">
                 <img src="./assets/img/pokeball.png" class="h-75">
                 <span class="f_s_36">Pokedex</span>
