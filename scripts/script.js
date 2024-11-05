@@ -134,6 +134,7 @@ async function showPokemonData(int) {
 /**
  * 
  * This is a function for the filtering pokemon with the first three leter.
+ * 
  *  
  */
 async function searchAndFilterPokemon() {
