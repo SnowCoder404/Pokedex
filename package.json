@@ -1,8 +1,0 @@
-{
-  "devDependencies": {
-    "eslint": "^9.13.0"
-  },
-  "dependencies": {
-    "jsdoc": "github:jsdoc/jsdoc"
-  }
-}
