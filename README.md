@@ -1,10 +1,12 @@
-# Pokedex
+**Pokedex - Your ultimate Pokémon explorer**
 
-## Build
-Run `docker build . -t pokedex` for build the docker image.
- 
-## Deploy with docker on the command line
-Run `docker run -d -p 80:80 pokedex` for pull and deploy the image.
+## ✨ About the application
+Pokedex is a powerful front-end application that works with the [PokeAPI](https://pokeapi.co). Explore detailed information about various Pokémon, including their abilities, stats and more - all in an intuitive and user-friendly interface.
 
-## Deploy with docker-compose
-Run `docker-compose up -d` for pull and deploy the image.
+## 🔧 Development
+- **Technologies:** HTML5, CSS, JavaScript, API integration
+
+## 💬 Feedback & Support
+Have you found any suggestions or bugs? Create an issue on [GitHub](https://github.com/SnowCoder404/Pokedex/issues) and help develop the application further!
+
+**Have fun with Pokedex** 🎮
