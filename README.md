@@ -7,4 +7,4 @@ Pokedex is a powerful front-end application that works with the [PokeAPI](https:
 ## 💬 Feedback & Support
 Have you found any suggestions or bugs? Create an issue on [GitHub](https://github.com/SnowCoder404/Pokedex/issues) and help develop the application further!
 
-**Have fun with Pokedex** 🎮
+**Have fun with Pokedex**
