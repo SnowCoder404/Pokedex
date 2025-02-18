@@ -1,5 +1,3 @@
-**Pokedex - Your ultimate Pokémon explorer**
-
 ## ✨ About the application
 Pokedex is a powerful front-end application that works with the [PokeAPI](https://pokeapi.co). Explore detailed information about various Pokémon, including their abilities, stats and more - all in an intuitive and user-friendly interface.
 
