@@ -22,6 +22,4 @@ jobs:
 
       - name: Deploy via SSH
         run: |
-          mkdir pokedex
-          cp -r * pokedex
           scp -r pokedex github@spain.vpn64.de:/var/www/html
